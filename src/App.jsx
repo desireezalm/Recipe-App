@@ -12,9 +12,10 @@ export const App = () => {
         <RecipePage item={selectedRecipe} clickFn={setSelectedRecipe} />
       ) : (
         <>
-          <Heading size="2xl" mb={8} color="teal.400">
+          <Heading size="2xl" mb={8} color="teal.600">
             {pageTitle}
           </Heading>
+
           <RecipeListPage clickFn={setSelectedRecipe} />
         </>
       )}
