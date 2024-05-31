@@ -1,37 +1,24 @@
-import {
-  Card,
-  CardBody,
-  Heading,
-  Image,
-  Stack,
-  Text,
-  Flex,
-  Spacer,
-} from "@chakra-ui/react";
+import { Card, CardBody, Heading, Image, Stack, Text } from "@chakra-ui/react";
 
-import { TagItem } from "./ui/TagItem";
+export const RecipeCard = ({ item, clickFn }) => {
+  console.log(item[0]);
 
-export const RecipeCard = ({ recipe, clickFn }) => {
   return (
     <Card
       borderRadius="xl"
       cursor="pointer"
+      bgColor="teal.200"
       w="20rem"
       h="fit-content"
-      onClick={() => clickFn(recipe)}
-      _hover={{ bgColor: "teal.200" }}
+      onClick={() => clickFn(item.recipe)}
+      _hover={{ bgColor: "teal.300" }}
     >
       <CardBody>
-        <Image w="sm" h={48} src={recipe.image} borderRadius="xl" />
+        <Image w="10rem" src={item.image} borderRadius="xl" />
         <Stack mt="6" spacing="3">
-          <Heading fontSize={{ base: "sm", sm: "md" }}>{recipe.title}</Heading>
-          <Text fontSize={{ base: "sm", sm: "md" }}>{recipe.summary}</Text>
-          <Spacer />
-          <Flex gap={2} wrap="wrap">
-            {recipe.skills.map((skill) => (
-              <TagItem key={skill}>{skill}</TagItem>
-            ))}
-          </Flex>
+          <Heading fontSize={{ base: "sm", sm: "md" }}>{item.label}</Heading>
+          <Text fontSize={{ base: "sm", sm: "md" }}>{item.mealType}</Text>
+          <Text fontSize={{ base: "sm", sm: "md" }}>{item.dishType}</Text>
         </Stack>
       </CardBody>
     </Card>
