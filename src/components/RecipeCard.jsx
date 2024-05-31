@@ -1,4 +1,13 @@
-import { Card, CardBody, Heading, Image, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Card,
+  CardBody,
+  Flex,
+  Heading,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 
 export const RecipeCard = ({ item, clickFn }) => {
   console.log(item[0]);
@@ -13,12 +22,35 @@ export const RecipeCard = ({ item, clickFn }) => {
       onClick={() => clickFn(item.recipe)}
       _hover={{ bgColor: "teal.300" }}
     >
+      <Image
+        w="20rem"
+        h="20rem"
+        objectFit="cover"
+        src={item.image}
+        borderTopRadius="xl"
+      />
       <CardBody>
-        <Image w="10rem" src={item.image} borderRadius="xl" />
-        <Stack mt="6" spacing="3">
-          <Heading fontSize={{ base: "sm", sm: "md" }}>{item.label}</Heading>
-          <Text fontSize={{ base: "sm", sm: "md" }}>{item.mealType}</Text>
-          <Text fontSize={{ base: "sm", sm: "md" }}>{item.dishType}</Text>
+        <Stack mt="3" spacing="2">
+          <Text
+            color="whiteAlpha.800"
+            fontWeight="light"
+            fontSize={{ base: "sm", sm: "md" }}
+            textAlign="center"
+            fontFamily="fantasy"
+            letterSpacing="widest"
+          >
+            {item.mealType}
+          </Text>
+          <Heading fontWeight="extrabold" fontSize={{ base: "md", sm: "lg" }}>
+            {item.label}
+          </Heading>
+
+          <Text fontSize={{ base: "sm", sm: "md" }}>
+            <Text display="inline-block" fontWeight="bold">
+              Dish:{" "}
+            </Text>{" "}
+            {item.dishType}
+          </Text>
         </Stack>
       </CardBody>
     </Card>

@@ -1,4 +1,4 @@
-import { Center, Flex, Text } from "@chakra-ui/react";
+import { Center, Flex } from "@chakra-ui/react";
 import { data } from "../utils/data";
 import { RecipeCard } from "../components/RecipeCard";
 
