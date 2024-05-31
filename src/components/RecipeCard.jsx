@@ -32,16 +32,20 @@ export const RecipeCard = ({ item, clickFn }) => {
       <CardBody>
         <Stack mt="3" spacing="2">
           <Text
-            color="whiteAlpha.800"
-            fontWeight="light"
+            color="white"
             fontSize={{ base: "sm", sm: "md" }}
             textAlign="center"
-            fontFamily="fantasy"
+            fontWeight="light"
             letterSpacing="widest"
           >
             {item.mealType}
           </Text>
-          <Heading fontWeight="extrabold" fontSize={{ base: "md", sm: "lg" }}>
+
+          <Heading
+            fontWeight="bold"
+            color="teal.800"
+            fontSize={{ base: "md", sm: "lg" }}
+          >
             {item.label}
           </Heading>
 
