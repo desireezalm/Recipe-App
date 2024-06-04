@@ -1,12 +1,10 @@
 import { Center } from "@chakra-ui/react";
-import { SearchBar } from "../components/SearchBar";
-import { ShowRecipes } from "../components/ShowRecipes";
+import { RecipeSearch } from "../components/RecipeSearch";
 
 export const RecipeListPage = ({ clickFn }) => {
   return (
     <Center flexDir="column">
-      <SearchBar />
-      <ShowRecipes clickFn={clickFn} />
+      <RecipeSearch clickFn={clickFn} />
     </Center>
   );
 };

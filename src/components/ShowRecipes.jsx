@@ -1,10 +1,12 @@
 import { Flex } from "@chakra-ui/react";
-import { data } from "../utils/data";
+//import { data } from "../utils/data";
 import { RecipeCard } from "./RecipeCard";
 
-export const ShowRecipes = ({ clickFn }) => {
+export const ShowRecipes = ({ recipeList, clickFn }) => {
+  /*
   const recipeList = data.hits;
   console.log(recipeList[0]);
+  */
 
   return (
     <Flex
