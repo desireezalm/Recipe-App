@@ -4,7 +4,7 @@ import { RecipeCard } from "../components/RecipeCard";
 
 export const RecipeListPage = ({ clickFn }) => {
   const recipeList = data.hits;
-  console.log(recipeList);
+  console.log(recipeList[0]);
 
   return (
     <Center flexDir="column">
@@ -16,7 +16,7 @@ export const RecipeListPage = ({ clickFn }) => {
         justify="center"
         alignItems="center"
         wrap="wrap"
-        padding="2rem"
+        padding={{ base: 0, sm: "2rem" }}
       >
         {recipeList.map((item) => (
           <RecipeCard
