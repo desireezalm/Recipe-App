@@ -1,6 +1,7 @@
 import { Center, Flex } from "@chakra-ui/react";
 import { data } from "../utils/data";
 import { RecipeCard } from "../components/RecipeCard";
+import { SearchBar } from "../components/SearchBar";
 
 export const RecipeListPage = ({ clickFn }) => {
   const recipeList = data.hits;
@@ -8,6 +9,7 @@ export const RecipeListPage = ({ clickFn }) => {
 
   return (
     <Center flexDir="column">
+      <SearchBar />
       <Flex
         gap={8}
         w="100%"

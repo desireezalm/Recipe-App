@@ -5,9 +5,10 @@ export const TextInput = ({ changeFn, ...props }) => (
     variant="outline"
     backgroundColor="teal.100"
     placeholder="Search"
-    _placeholder={{ opacity: 1, color: "teal.500" }}
-    color="teal.500"
-    focusBorderColor="teal.500"
+    _placeholder={{ opacity: 1, color: "teal.400" }}
+    color="teal.400"
+    focusBorderColor="teal.300"
+    borderColor="teal.400"
     borderRadius="10px"
     onChange={changeFn}
     {...props}

@@ -2,14 +2,10 @@ import { useState } from "react";
 import { data } from "../utils/data";
 import { TextInput } from "./ui/TextInput";
 import { Text } from "@chakra-ui/react";
+//import { ShowRecipes } from "ShowRecipes";
 
-export const RecipeSearch = ({ clickFn }) => {
+export const SearchBar = () => {
   const [searchField, setSearchField] = useState("");
-  const recipeList = data.hits;
-
-  const recipeMatches = recipeList.filter((recipe) => {
-    return recipe.label.toLowerCase().includes(searchField.toLowerCase());
-  });
 
   const handleChange = (event) => {
     setSearchField(event.target.value);
@@ -26,7 +22,7 @@ export const RecipeSearch = ({ clickFn }) => {
       >
         Search recipes:
       </Text>
-      <TextInput onChange={handleChange} w={200} mb={8} />
+      <TextInput onChange={handleChange} w={225} mt={1} mb={8} />
     </>
   );
 };
