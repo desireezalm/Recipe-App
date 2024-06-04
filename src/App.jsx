@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export const App = () => {
   const [selectedRecipe, setSelectedRecipe] = useState();
-  const pageTitle = "Recipe Hoarder";
+  const pageTitle = "The Recipe Collector";
   return (
     <Center bgColor="teal.100" flexDir="column">
       {selectedRecipe ? (
@@ -13,7 +13,15 @@ export const App = () => {
       ) : (
         <>
           <Stack alignItems="center">
-            <Heading size="xl" mb={8} color="teal.600">
+            <Heading
+              fontFamily="fantasy"
+              letterSpacing="widest"
+              size="xl"
+              maxW="100vw"
+              mt={2}
+              mb={2}
+              color="teal.600"
+            >
               {pageTitle}
             </Heading>
             <RecipeListPage clickFn={setSelectedRecipe} />
