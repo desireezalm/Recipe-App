@@ -8,9 +8,18 @@ export const RecipeSearch = ({ clickFn }) => {
   const [searchField, setSearchField] = useState("");
 
   const recipeList = data.hits;
-
   const recipeMatches = recipeList.filter((item) => {
-    return item.recipe.label.toLowerCase().includes(searchField.toLowerCase());
+    const recipeName = item.recipe.label.toLowerCase();
+    const recipeHealthLabels = item.recipe.healthLabels;
+
+    const searchArray = recipeHealthLabels.map((healthLabel) => {
+      return healthLabel.toLowerCase();
+    });
+    searchArray.unshift(recipeName);
+    const searchString = JSON.stringify(searchArray);
+
+    const result = searchString.includes(searchField.toLowerCase());
+    return result;
   });
 
   const handleChange = (event) => {
