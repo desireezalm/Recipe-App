@@ -1,4 +1,5 @@
 import {
+  Box,
   Card,
   CardBody,
   Divider,
@@ -54,7 +55,6 @@ export const RecipeCard = ({ item, clickFn }) => {
           >
             {item.mealType}
           </Text>
-
           <Heading
             fontWeight="bold"
             color="teal.800"
@@ -62,18 +62,24 @@ export const RecipeCard = ({ item, clickFn }) => {
           >
             {item.label}
           </Heading>
-
-          <Text
-            fontSize={{ base: "sm", sm: "md" }}
-            color="teal.700"
-            fontWeight="light"
-          >
-            <Text display="inline-block" fontWeight="medium" color="teal.700">
+          <Box>
+            <Text
+              display="inline-block"
+              fontWeight="medium"
+              color="teal.700"
+              fontSize={{ base: "sm", sm: "md" }}
+            >
               dish:{" "}
             </Text>{" "}
-            {item.dishType}
-          </Text>
-
+            <Text
+              display="inline-block"
+              fontSize={{ base: "sm", sm: "md" }}
+              color="teal.700"
+              fontWeight="light"
+            >
+              {item.dishType}
+            </Text>
+          </Box>
           <Spacer></Spacer>
           <Divider
             color="teal.100"
@@ -82,9 +88,8 @@ export const RecipeCard = ({ item, clickFn }) => {
             alignSelf="center"
           ></Divider>
           <Spacer></Spacer>
-
           {healthLabelQty > 0 && (
-            <Flex gap={2} wrap="wrap" alignSelf="center">
+            <Flex gap={4} wrap="wrap" alignSelf="center" paddingBottom="1rem">
               {croppedHealthLabels.map((label) => (
                 <TagItem
                   key={label}
@@ -98,6 +103,8 @@ export const RecipeCard = ({ item, clickFn }) => {
               ))}
             </Flex>
           )}
+
+          <Spacer></Spacer>
 
           {dietLabelQty > 0 && (
             <Flex
@@ -115,7 +122,6 @@ export const RecipeCard = ({ item, clickFn }) => {
               ))}
             </Flex>
           )}
-
           {cautionLabelQty > 0 && (
             <Flex
               gap={2}

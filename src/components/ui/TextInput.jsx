@@ -8,6 +8,7 @@ export const TextInput = ({ changeFn, ...props }) => (
     placeholder="Search"
     _placeholder={{ opacity: 1, color: "teal.400" }}
     color="teal.400"
+    fontSize={{ base: "1rem", sm: "1.2rem" }}
     focusBorderColor="teal.300"
     borderColor="teal.400"
     borderRadius="10px"

@@ -16,7 +16,7 @@ export const App = () => {
             <Heading
               fontFamily="fantasy"
               letterSpacing="widest"
-              size="xl"
+              size={{ base: "xl", sm: "2xl", md: "3xl" }}
               maxW="100vw"
               mt={2}
               mb={2}
