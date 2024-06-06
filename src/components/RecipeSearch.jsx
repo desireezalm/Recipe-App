@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { data } from "../utils/data";
 import { TextInput } from "./ui/TextInput";
-import { Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { ShowRecipes } from "./ShowRecipes";
+import { Search2Icon } from "@chakra-ui/icons";
 
 export const RecipeSearch = ({ clickFn }) => {
   const [searchField, setSearchField] = useState("");
@@ -29,7 +30,7 @@ export const RecipeSearch = ({ clickFn }) => {
   return (
     <>
       <Text
-        fontSize="1.1rem"
+        fontSize={{ base: "1rem", sm: "1.3rem" }}
         as="em"
         fontWeight={500}
         color="teal.500"
@@ -37,7 +38,15 @@ export const RecipeSearch = ({ clickFn }) => {
       >
         Search recipes:
       </Text>
-      <TextInput onChange={handleChange} w={225} mt={1} mb={8} />
+      <Box>
+        <Search2Icon color="teal.400" mr="1rem" mb="0.5rem" boxSize="1.3rem" />
+        <TextInput
+          onChange={handleChange}
+          w={{ base: 225, sm: 300 }}
+          mt={1}
+          mb={8}
+        />
+      </Box>
       <ShowRecipes clickFn={clickFn} recipeList={recipeMatches} />
     </>
   );
