@@ -3,11 +3,6 @@ import { Flex } from "@chakra-ui/react";
 import { RecipeCard } from "./RecipeCard";
 
 export const ShowRecipes = ({ recipeList, clickFn }) => {
-  /*
-  const recipeList = data.hits;
-  console.log(recipeList[0]);
-  */
-
   return (
     <Flex
       gap={8}

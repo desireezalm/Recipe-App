@@ -32,7 +32,7 @@ export const RecipeCard = ({ item, clickFn }) => {
       cursor="pointer"
       bgColor="teal.200"
       w={{ base: "100%", sm: "22rem" }}
-      h={{ base: "fit-content", sm: "39rem" }}
+      h={{ base: "fit-content", sm: "40rem" }}
       onClick={() => clickFn(item.recipe)}
       _hover={{ bgColor: "teal.300" }}
     >
@@ -47,7 +47,7 @@ export const RecipeCard = ({ item, clickFn }) => {
         <Stack mt="3" spacing="2">
           <Text
             color="white"
-            fontSize={{ base: "sm", sm: "md" }}
+            fontSize={{ base: "md", sm: "lg" }}
             textAlign="center"
             fontWeight="light"
             letterSpacing="widest"
@@ -84,15 +84,17 @@ export const RecipeCard = ({ item, clickFn }) => {
           <Spacer></Spacer>
 
           {healthLabelQty > 0 && (
-            <Flex
-              gap={2}
-              wrap="wrap"
-              fontSize={{ base: "sm", sm: "md" }}
-              color="teal.700"
-              fontWeight="light"
-            >
+            <Flex gap={2} wrap="wrap" alignSelf="center">
               {croppedHealthLabels.map((label) => (
-                <TagItem key={label}>{label}s</TagItem>
+                <TagItem
+                  key={label}
+                  color="white"
+                  bgColor="inherit"
+                  fontWeight="light"
+                  fontSize={{ base: "sm", sm: "md" }}
+                >
+                  {label}
+                </TagItem>
               ))}
             </Flex>
           )}
