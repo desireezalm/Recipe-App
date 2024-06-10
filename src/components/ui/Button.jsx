@@ -15,6 +15,12 @@ export const Button = ({ clickFn, text }) => {
       fontWeight="light"
       fontSize={{ base: "sm", md: "md" }}
       letterSpacing="widest"
+      _hover={{ bgColor: "teal.300", cursor: "pointer" }}
+      _active={{
+        transform: "scale(0.98)",
+        borderColor: "white",
+        borderWidth: "0.1rem",
+      }}
     >
       <ArrowLeftIcon marginRight="1rem" /> {text}
     </GenericButton>
