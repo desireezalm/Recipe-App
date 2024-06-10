@@ -14,8 +14,6 @@ import {
 import { TagItem } from "./ui/TagItem";
 
 export const RecipeCard = ({ item, clickFn }) => {
-  console.log(item[0]);
-
   const healthLabelQty = item.healthLabels.length;
   const dietLabelQty = item.dietLabels.length;
   const cautionLabelQty = item.cautions.length;
