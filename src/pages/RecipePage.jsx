@@ -77,7 +77,7 @@ export const RecipePage = ({ item, clickFn }) => {
                 >
                   <Text
                     color="white"
-                    fontSize={{ base: "md", md: "lg" }}
+                    fontSize={{ base: "md", md: "xl" }}
                     textAlign="center"
                     alignSelf="center"
                     fontWeight="light"
@@ -279,19 +279,53 @@ export const RecipePage = ({ item, clickFn }) => {
 
                 <GridItem
                   h="fit-content"
-                  colSpan={{ base: 1, md: 2 }}
+                  colSpan={{ base: 1, md: 1 }}
                   colStart={1}
                   rowStart={5}
                   rowEnd={5}
                 >
+                  {" "}
+                  <TextSectionBold
+                    text={"Ingredients: "}
+                    display="block"
+                  />{" "}
                   <Flex
-                    flexDirection="column"
+                    flexDirection={{ base: "column", md: "row" }}
                     color="teal.700"
-                    marginBottom="1.5rem"
+                    paddingTop={{ base: "0.7rem", md: "1.5rem" }}
+                    marginBottom={{ base: "1.5rem", md: "3rem" }}
+                    wrap="wrap"
+                    alignSelf="center"
+                    gap={2}
                   >
-                    <TextSectionBold text={"Ingredients: "} />{" "}
-                    {item.ingredientLines.map((ingredient) => (
-                      <TextSectionNormal text={ingredient} key={ingredient} />
+                    {item.ingredients.map((ingredient) => (
+                      <Flex
+                        key={ingredient.foodId}
+                        w={{ base: "100%", md: "10rem" }}
+                        h="fit-content"
+                        flexDirection={{ base: "row", md: "column" }}
+                        alignItems="center"
+                        justifyContent="flex-start"
+                        wrap={{ base: "nowrap", md: "wrap" }}
+                        gap={2}
+                      >
+                        <Image
+                          src={ingredient.image}
+                          w={{ base: "4rem", md: "8rem" }}
+                          borderRadius="xl"
+                          objectFit="cover"
+                          display="inline-block"
+                          p={1}
+                          paddingRight={{ base: "md", md: "0" }}
+                        />
+                        <TextSectionNormal
+                          textAlign="center"
+                          margin="0 auto"
+                          m="0.5rem"
+                          text={ingredient.text}
+                          p={2}
+                        />
+                      </Flex>
                     ))}
                   </Flex>
                 </GridItem>
