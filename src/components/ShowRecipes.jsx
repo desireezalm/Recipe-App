@@ -1,5 +1,4 @@
 import { SimpleGrid } from "@chakra-ui/react";
-//import { data } from "../utils/data";
 import { RecipeCard } from "./RecipeCard";
 
 export const ShowRecipes = ({ recipeList, clickFn }) => {
