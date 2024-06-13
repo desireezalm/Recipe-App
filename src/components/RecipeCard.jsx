@@ -1,4 +1,5 @@
 import {
+  Box,
   Card,
   CardBody,
   Divider,
@@ -13,8 +14,6 @@ import {
 import { TagItem } from "./ui/TagItem";
 
 export const RecipeCard = ({ item, clickFn }) => {
-  console.log(item[0]);
-
   const healthLabelQty = item.healthLabels.length;
   const dietLabelQty = item.dietLabels.length;
   const cautionLabelQty = item.cautions.length;
@@ -32,7 +31,7 @@ export const RecipeCard = ({ item, clickFn }) => {
       cursor="pointer"
       bgColor="teal.200"
       w={{ base: "100%", sm: "22rem" }}
-      h={{ base: "fit-content", sm: "39rem" }}
+      h={{ base: "fit-content", sm: "40rem" }}
       onClick={() => clickFn(item.recipe)}
       _hover={{ bgColor: "teal.300" }}
     >
@@ -47,14 +46,13 @@ export const RecipeCard = ({ item, clickFn }) => {
         <Stack mt="3" spacing="2">
           <Text
             color="white"
-            fontSize={{ base: "sm", sm: "md" }}
+            fontSize={{ base: "md", sm: "lg" }}
             textAlign="center"
             fontWeight="light"
             letterSpacing="widest"
           >
             {item.mealType}
           </Text>
-
           <Heading
             fontWeight="bold"
             color="teal.800"
@@ -62,18 +60,24 @@ export const RecipeCard = ({ item, clickFn }) => {
           >
             {item.label}
           </Heading>
-
-          <Text
-            fontSize={{ base: "sm", sm: "md" }}
-            color="teal.700"
-            fontWeight="light"
-          >
-            <Text display="inline-block" fontWeight="medium" color="teal.700">
+          <Box>
+            <Text
+              display="inline-block"
+              fontWeight="medium"
+              color="teal.700"
+              fontSize={{ base: "sm", sm: "md" }}
+            >
               dish:{" "}
             </Text>{" "}
-            {item.dishType}
-          </Text>
-
+            <Text
+              display="inline-block"
+              fontSize={{ base: "sm", sm: "md" }}
+              color="teal.700"
+              fontWeight="light"
+            >
+              {item.dishType}
+            </Text>
+          </Box>
           <Spacer></Spacer>
           <Divider
             color="teal.100"
@@ -82,20 +86,23 @@ export const RecipeCard = ({ item, clickFn }) => {
             alignSelf="center"
           ></Divider>
           <Spacer></Spacer>
-
           {healthLabelQty > 0 && (
-            <Flex
-              gap={2}
-              wrap="wrap"
-              fontSize={{ base: "sm", sm: "md" }}
-              color="teal.700"
-              fontWeight="light"
-            >
+            <Flex gap={4} wrap="wrap" alignSelf="center" paddingBottom="1rem">
               {croppedHealthLabels.map((label) => (
-                <TagItem key={label}>{label}s</TagItem>
+                <TagItem
+                  key={label}
+                  color="white"
+                  bgColor="inherit"
+                  fontWeight="light"
+                  fontSize={{ base: "sm", sm: "md" }}
+                >
+                  {label}
+                </TagItem>
               ))}
             </Flex>
           )}
+
+          <Spacer></Spacer>
 
           {dietLabelQty > 0 && (
             <Flex
@@ -113,7 +120,6 @@ export const RecipeCard = ({ item, clickFn }) => {
               ))}
             </Flex>
           )}
-
           {cautionLabelQty > 0 && (
             <Flex
               gap={2}
