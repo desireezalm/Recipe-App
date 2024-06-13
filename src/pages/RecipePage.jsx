@@ -301,7 +301,7 @@ export const RecipePage = ({ item, clickFn }) => {
                     {item.ingredients.map((ingredient) => (
                       <Flex
                         key={ingredient.foodId}
-                        w={{ base: "100%", md: "10rem" }}
+                        w={{ base: "100%", md: "12rem" }}
                         h="fit-content"
                         flexDirection={{ base: "row", md: "column" }}
                         alignItems="center"
@@ -311,7 +311,7 @@ export const RecipePage = ({ item, clickFn }) => {
                       >
                         <Image
                           src={ingredient.image}
-                          w={{ base: "4rem", md: "8rem" }}
+                          w={{ base: "4rem", md: "9rem" }}
                           borderRadius="xl"
                           objectFit="cover"
                           display="inline-block"
@@ -320,10 +320,7 @@ export const RecipePage = ({ item, clickFn }) => {
                         />
                         <TextSectionNormal
                           textAlign="center"
-                          margin="0 auto"
-                          m="0.5rem"
                           text={ingredient.text}
-                          p={2}
                         />
                       </Flex>
                     ))}
