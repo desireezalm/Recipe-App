@@ -8,17 +8,12 @@ import {
   Heading,
   Flex,
   Box,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionIcon,
-  AccordionPanel,
   Grid,
   GridItem,
 } from "@chakra-ui/react";
 
-import { TagItem } from "../components/ui/TagItem";
 import { Button } from "../components/ui/Button";
+import { AccordionElement } from "../components/ui/AccordionElement";
 import {
   TextSectionBold,
   TextSectionLight,
@@ -164,115 +159,22 @@ export const RecipePage = ({ item, clickFn }) => {
                     display="inline-block"
                   >
                     {item.healthLabels.length > 0 && (
-                      <Accordion allowToggle>
-                        <AccordionItem borderColor="teal.200">
-                          <Box>
-                            <AccordionButton>
-                              <Text
-                                fontWeight="medium"
-                                color="teal.700"
-                                fontSize={{ base: "sm", sm: "md" }}
-                                textAlign="left"
-                                flex="1"
-                              >
-                                Health information
-                              </Text>
-                              <AccordionIcon />
-                            </AccordionButton>
-                          </Box>
-                          <AccordionPanel pb={1}>
-                            <Flex
-                              flexDirection="column"
-                              wrap="wrap"
-                              maxHeight={{ base: "16rem", md: "20rem" }}
-                            >
-                              {item.healthLabels.map((label) => (
-                                <TagItem
-                                  key={label}
-                                  fontWeight="light"
-                                  fontSize={{ base: "sm", sm: "md" }}
-                                >
-                                  {label}
-                                </TagItem>
-                              ))}
-                            </Flex>
-                          </AccordionPanel>
-                        </AccordionItem>
-                      </Accordion>
+                      <AccordionElement
+                        labelArray={item.healthLabels}
+                        text={"Health information"}
+                      />
                     )}
                     {item.dietLabels.length > 0 && (
-                      <Accordion allowToggle>
-                        <AccordionItem borderColor="teal.200">
-                          <Box>
-                            <AccordionButton>
-                              <Text
-                                fontWeight="medium"
-                                color="teal.700"
-                                fontSize={{ base: "sm", sm: "md" }}
-                                textAlign="left"
-                                flex="1"
-                              >
-                                Dietary information
-                              </Text>
-                              <AccordionIcon />
-                            </AccordionButton>
-                          </Box>
-                          <AccordionPanel pb={1}>
-                            <Flex
-                              flexDirection="column"
-                              wrap="wrap"
-                              maxHeight="12rem"
-                            >
-                              {item.dietLabels.map((dietLabel) => (
-                                <TagItem
-                                  key={dietLabel}
-                                  fontWeight="light"
-                                  fontSize={{ base: "sm", sm: "md" }}
-                                >
-                                  {dietLabel}
-                                </TagItem>
-                              ))}
-                            </Flex>
-                          </AccordionPanel>
-                        </AccordionItem>
-                      </Accordion>
+                      <AccordionElement
+                        labelArray={item.dietLabels}
+                        text={"Dietary information"}
+                      />
                     )}
                     {item.cautions.length > 0 && (
-                      <Accordion allowToggle>
-                        <AccordionItem borderColor="teal.200">
-                          <Box>
-                            <AccordionButton>
-                              <Text
-                                fontWeight="medium"
-                                color="teal.700"
-                                fontSize={{ base: "sm", sm: "md" }}
-                                textAlign="left"
-                                flex="1"
-                              >
-                                Cautions
-                              </Text>
-                              <AccordionIcon />
-                            </AccordionButton>
-                          </Box>
-                          <AccordionPanel pb={1}>
-                            <Flex
-                              flexDirection="column"
-                              wrap="wrap"
-                              maxHeight="12rem"
-                            >
-                              {item.cautions.map((caution) => (
-                                <TagItem
-                                  key={caution}
-                                  fontWeight="light"
-                                  fontSize={{ base: "sm", sm: "md" }}
-                                >
-                                  {caution}
-                                </TagItem>
-                              ))}
-                            </Flex>
-                          </AccordionPanel>
-                        </AccordionItem>
-                      </Accordion>
+                      <AccordionElement
+                        labelArray={item.cautions}
+                        text={"Cautions"}
+                      />
                     )}
                   </Stack>
                 </GridItem>
