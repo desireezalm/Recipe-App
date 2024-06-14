@@ -3,8 +3,6 @@ import { RecipeListPage } from "./pages/RecipeListPage";
 import { RecipePage } from "./pages/RecipePage";
 import { useState } from "react";
 
-import { data } from "./utils/data";
-
 export const App = () => {
   const [selectedRecipe, setSelectedRecipe] = useState();
   const pageTitle = "The Recipe Collector";
