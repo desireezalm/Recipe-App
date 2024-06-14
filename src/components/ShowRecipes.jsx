@@ -1,18 +1,13 @@
-import { Flex } from "@chakra-ui/react";
-//import { data } from "../utils/data";
+import { SimpleGrid } from "@chakra-ui/react";
 import { RecipeCard } from "./RecipeCard";
 
 export const ShowRecipes = ({ recipeList, clickFn }) => {
   return (
-    <Flex
-      gap={8}
-      w="100%"
-      h="100%"
-      flexDirection={{ base: "column", sm: "row" }}
-      justify="center"
-      alignItems="center"
-      wrap="wrap"
-      padding={{ base: 0, sm: "2rem" }}
+    <SimpleGrid
+      columns={{ base: 1, md: 2, lg: 3 }}
+      spacing={8}
+      padding={{ base: 0, sm: "sm", md: "md" }}
+      margin={{ base: 0, sm: "sm", md: "md" }}
     >
       {recipeList.map((item) => (
         <RecipeCard
@@ -21,6 +16,6 @@ export const ShowRecipes = ({ recipeList, clickFn }) => {
           key={item.recipe.label}
         />
       ))}
-    </Flex>
+    </SimpleGrid>
   );
 };

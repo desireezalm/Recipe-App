@@ -32,13 +32,14 @@ export const RecipeCard = ({ item, clickFn }) => {
       bgColor="teal.200"
       w={{ base: "100%", sm: "22rem" }}
       h={{ base: "fit-content", sm: "40rem" }}
-      onClick={() => clickFn(item.recipe)}
+      onClick={() => clickFn(item)}
       _hover={{ bgColor: "teal.300" }}
     >
       <Image
         w={{ base: "100%", sm: "22rem" }}
-        h="22rem"
+        h={{ base: "50vh", md: "50%" }}
         objectFit="cover"
+        objectPosition="50% 50%"
         src={item.image}
         borderTopRadius="xl"
       />
