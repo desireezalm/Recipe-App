@@ -1,7 +1,7 @@
+import { useState } from "react";
+import { data } from "../utils/data";
 import { Center, Text, Box } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
-import { data } from "../utils/data";
-import { useState } from "react";
 import { ShowRecipes } from "../components/ShowRecipes";
 import { TextInput } from "../components/ui/TextInput";
 
