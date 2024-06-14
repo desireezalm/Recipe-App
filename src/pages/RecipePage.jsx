@@ -10,9 +10,9 @@ import {
   Box,
   Grid,
   GridItem,
+  Button,
 } from "@chakra-ui/react";
 
-import { Button } from "../components/ui/Button";
 import { AccordionElement } from "../components/ui/AccordionElement";
 import {
   TextSectionBold,
@@ -43,6 +43,7 @@ export const RecipePage = ({ item, clickFn }) => {
           <Image
             src={item.image}
             w={{ base: "100vw", md: "50vw" }}
+            h={{ base: "50vh", md: "50vh" }}
             borderTopRadius="xl"
             borderBottomRadius={{ base: 0, md: "xl" }}
             objectFit="cover"
@@ -230,7 +231,25 @@ export const RecipePage = ({ item, clickFn }) => {
                 </GridItem>
               </Grid>
             </Center>
-            <Button clickFn={clickFn} text={"Return to recipe overview"} />
+            <Button
+              color="white"
+              bgColor="teal.200"
+              w={{ base: "90vw", md: "fit-content" }}
+              padding="1rem"
+              mt={14}
+              fontWeight="light"
+              fontSize={{ base: "sm", md: "md" }}
+              letterSpacing="widest"
+              _hover={{ bgColor: "teal.300", cursor: "pointer" }}
+              _active={{
+                transform: "scale(0.98)",
+                borderColor: "white",
+                borderWidth: "0.1rem",
+              }}
+              onClick={() => clickFn()}
+            >
+              Return to recipe overview
+            </Button>
           </CardBody>
         </Flex>
       </Card>
