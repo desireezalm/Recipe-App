@@ -5,7 +5,6 @@ import { ArrowLeftIcon } from "@chakra-ui/icons";
 export const Button = ({ clickFn, text }) => {
   return (
     <GenericButton
-      onClick={clickFn}
       color="white"
       bgColor="teal.200"
       text={text}
@@ -21,6 +20,7 @@ export const Button = ({ clickFn, text }) => {
         borderColor: "white",
         borderWidth: "0.1rem",
       }}
+      onClick={clickFn}
     >
       <ArrowLeftIcon marginRight="1rem" /> {text}
     </GenericButton>
