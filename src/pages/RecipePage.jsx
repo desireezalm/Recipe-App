@@ -12,6 +12,7 @@ import {
   GridItem,
   Button,
 } from "@chakra-ui/react";
+import { ArrowLeftIcon } from "@chakra-ui/icons";
 
 import { AccordionElement } from "../components/ui/AccordionElement";
 import {
@@ -43,10 +44,11 @@ export const RecipePage = ({ item, clickFn }) => {
           <Image
             src={item.image}
             w={{ base: "100vw", md: "50vw" }}
-            h={{ base: "50vh", md: "50vh" }}
+            h={{ base: "50vh", md: "60vh" }}
             borderTopRadius="xl"
             borderBottomRadius={{ base: 0, md: "xl" }}
             objectFit="cover"
+            objectPosition="50% 50%"
             display="inline-block"
           />
           <CardBody h="fit-content">
@@ -248,6 +250,7 @@ export const RecipePage = ({ item, clickFn }) => {
               }}
               onClick={() => clickFn()}
             >
+              <ArrowLeftIcon marginRight="1rem" />
               Return to recipe overview
             </Button>
           </CardBody>

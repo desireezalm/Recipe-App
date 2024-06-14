@@ -37,8 +37,9 @@ export const RecipeCard = ({ item, clickFn }) => {
     >
       <Image
         w={{ base: "100%", sm: "22rem" }}
-        h="22rem"
+        h={{ base: "50vh", md: "50%" }}
         objectFit="cover"
+        objectPosition="50% 50%"
         src={item.image}
         borderTopRadius="xl"
       />
